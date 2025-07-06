@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.jsx (ATUALIZADO)
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout'; // Importe SEU componente de Layout
+
+// Importe todos os seus componentes de página
+import HomePage from './pages/paginainicial'; 
+import LoginPage from './pages/login';
+import CadastroPage from './pages/cadDoacao';
+import PerfilPage from './pages/perfilDoador';
+import ItemDetailsPage from './pages/detalhesDoItem';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Router>
+      <Routes>
+        {/* Todas as rotas agora usam o componente Layout */}
+        <Route path="/" element={<Layout><HomePage /></Layout>} />
+        <Route path="/login" element={<Layout><LoginPage /></Layout>} />
+        <Route path="/cadastro" element={<Layout><CadastroPage /></Layout>} />
+        <Route path="/perfil" element={<Layout><PerfilPage /></Layout>} />
+        <Route path="/item/:id" element={<Layout><ItemDetailsPage /></Layout>} />
+        {/* Se tiver mais rotas, adicione-as aqui, sempre dentro de <Layout> */}
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

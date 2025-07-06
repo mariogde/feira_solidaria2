@@ -1,0 +1,40 @@
+/* src/components/Header.css */
+
+.main-header {
+    background-color: #6B8EBF; /* Seu Azul Cadete */
+    padding: 1rem 2rem; /* Espaçamento interno */
+    color: white; /* Cor do texto padrão */
+    display: flex; /* Para alinhar itens lado a lado */
+    justify-content: space-between; /* Espaço entre logo e menu */
+    align-items: center; /* Alinha verticalmente no centro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.logo-container {
+    /* Adicione estilos aqui se precisar posicionar o logo */
+}
+
+.logo-link {
+    color: white; /* Cor do texto do logo */
+    text-decoration: none; /* Remove sublinhado padrão do link */
+    font-size: 1.5rem; /* Tamanho da fonte do logo */
+    font-weight: bold; /* Negrito */
+}
+
+.main-nav .nav-list {
+    list-style: none; /* Remove bolinhas da lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Para alinhar os itens do menu lado a lado */
+    gap: 1.5rem; /* Espaçamento entre os itens do menu */
+}
+
+.main-nav .nav-item {
+    color: white; /* Cor do texto dos itens do menu */
+    text-decoration: none; /* Remove sublinhado */
+    transition: text-decoration 0.3s ease; /* Transição suave para hover */
+}
+
+.main-nav .nav-item:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
