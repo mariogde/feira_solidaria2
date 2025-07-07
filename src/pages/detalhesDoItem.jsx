@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'; // Para pegar o :id da URL
+import { useParams } from 'react-router-dom'; // Pega o :id da URL
 
 function ItemDetailsPage() {
   const { id } = useParams(); // Pega o ID da URL

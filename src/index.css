@@ -1,13 +1,13 @@
-/* src/index.css (AJUSTADO) */
+/* src/index.css (JA AJUSTADO) */
 
 /* Estilos globais para o HTML e BODY */
 html, body {
-    margin: 0;        /* Remove margens padrão do navegador */
-    padding: 0;       /* Remove preenchimento padrão do navegador */
-    width: 100%;      /* Faz ocupar 100% da largura disponível */
+    margin: 0;        /* Pra remover margens padrão do navegador */
+    padding: 0;       /* remover preenchimento padrão do navegador */
+    width: 100%;      /* Pra ocupar 100% da largura disponível */
     min-height: 100vh; /* Garante que o body ocupe 100% da altura da viewport */
     /* Removendo 'display: flex' e 'place-items: center' do body padrão do Vite */
-    /* Isso estava centralizando o conteúdo e limitando a largura */
+    /* Era o que estava centralizando o conteúdo e limitando a largura */
 }
 
 /* Estilos para o div #root, onde o aplicativo React é montado */
@@ -15,11 +15,11 @@ html, body {
     width: 100%;      /* Ocupa 100% da largura do body */
     min-height: 100vh; /* Ocupa 100% da altura da viewport */
     display: flex;    /* Importante para que o Layout dentro dele possa esticar */
-    flex-direction: column; /* Organiza os filhos (seu Layout) em coluna */
+    flex-direction: column; /* Organiza os filhos (o Layout) em coluna */
 }
 
 
-/* -- Estilos Padrão do Vite (Mantidos abaixo para referência) -- */
+/* -- Estilos Padrão do Vite (Vão ser mantidos abaixo para referência) -- */
 
 :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -45,7 +45,7 @@ a:hover {
     color: #535bf2;
 }
 
-body { /* Este bloco será sobrescrito pelos estilos acima */
+body { /* Este bloco vai ser sobrescrito pelos estilos acima */
     margin: 0;
     display: flex;
     place-items: center;
