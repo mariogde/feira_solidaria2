@@ -1,5 +1,5 @@
 // src/components/Layout.jsx
-import Header from "./Header.jsx"; // O Header que você ajustado foi importado pra cá 
+import Header from "./Header.jsx"; // O Header ajustado foi importado pra cá 
 // import Footer from './footer'; // Se tiver um footer, importe-o pra cá
 
 function Layout({ children }) {
