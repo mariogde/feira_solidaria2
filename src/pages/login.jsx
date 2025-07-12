@@ -1,4 +1,8 @@
+import Inputs from "../components/login";
+
 function LoginPage() {
-  return <h1>Página de Login</h1>;
+  return (
+    <Inputs />
+  );
 }
 export default LoginPage;
