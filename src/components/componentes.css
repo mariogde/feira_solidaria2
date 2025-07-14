@@ -1,3 +1,5 @@
+/* =============Inicio CSS Login===========*/
+
 .inputs{
     display: flex;
     flex-direction: column;
@@ -13,7 +15,7 @@
     align-items: center;
     justify-content: center;
     width: 732px;
-    height: 442px;
+    height: 450px;
     background-color: rgba(33, 81, 145, 0.247);
 
 }
@@ -40,12 +42,14 @@
 
 .btnLogin{
     border: none;
-    width: 150px;
+    width: 160px;
     height: 63px;
     border-radius: 20px;
     font-size: 18pt;
     background-color: rgba(29, 104, 202, 0.692);
 }
+
+/* =============Fim CSS Login===========*/
 
 /* =============Inicio CSS Perfil doador===========*/
 .Perfil {
@@ -98,5 +102,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* =============Fim CSS Perfil doador===========*/
+
+/* =============Inicio CSS Cadastro Usuário===========*/
 
 /* =============Fim CSS Perfil doador===========*/

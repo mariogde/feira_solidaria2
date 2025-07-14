@@ -1,4 +1,8 @@
+import User from "../components/cadUsuario";
+
 function cadDoacao() {
-  return <h1>Página de Cadastro</h1>;
+  return (
+    <User />
+  )
 }
 export default cadDoacao;

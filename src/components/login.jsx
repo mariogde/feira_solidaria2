@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import './componentes.css'
 
-const Inputs = (props)=> {
+const Inputs = ()=> {
   const [email, setEmail] = useState('');
   const [password, setPassword ] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault(); // SUPER IMPORTANTE! Impede a página de recarregar.
 
-    //PRAVER DADOS DO FORMULÁRIO POR ENQUANTO:
+    //PRA VER DADOS DO FORMULÁRIO POR ENQUANTO:
     console.log('Email digitado:', email);
     console.log('Senha digitada:', password);
 
