@@ -46,3 +46,57 @@
     font-size: 18pt;
     background-color: rgba(29, 104, 202, 0.692);
 }
+
+/* =============Inicio CSS Perfil doador===========*/
+.Perfil {
+  background-color: #f6f6dc; 
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.Perfil h1 {
+  color:black;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+.Perfil_Dados {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.Perfil_itens {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.Perfil_itens label {
+  color:black;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.Perfil_itens input {
+  background-color: #e1e1e1;
+  border: none;
+  border-radius: 20px;
+  height: 32px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #333;
+  pointer-events: none; 
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .Perfil_Dados {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =============Fim CSS Perfil doador===========*/
