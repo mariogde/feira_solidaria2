@@ -94,7 +94,7 @@ function loginDoador() {
         alert('Preencha todos os campos!');
     } else{
         alert('Usuário logado!');
-        window.location.href = '../perfil-doador'; // Redireciona para o perfil do receptor
+        window.location.href = '../perfil'; // Redireciona para o perfil do receptor
     }
 }
 
