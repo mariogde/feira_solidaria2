@@ -14,7 +14,8 @@ import Footer from './components/Footer'; // Seu componente de rodapé
 // Verifique os caminhos e os nomes dos arquivos/componentes exportados
 import HomePage from './pages/paginainicial';         // Ex: a página inicial
 import LoginPage from './pages/login';                 // Ex: a página de login
-import CadastroPage from './components/cadUsuario';    // Ex: a página de cadastro
+import CadastroPage from './pages/cadDoacao';    // Ex: a página de cadastro
+import User from './components/cadUsuario';    // Ex: a página de cadastro
 import PerfilPage from './pages/perfilDoador';       // Ex: a página de perfil do doador
 import ItemDetailsPage from './pages/detalhesDoItem'; // Ex: detalhes de um item
 
@@ -37,6 +38,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/cadastro" element={<CadastroPage />} /> 
+            <Route path="/cadastro-usuario" element={<User />} /> 
             <Route path="/perfil" element={<PerfilPage />} />
             <Route path="/item/:id" element={<ItemDetailsPage />} />
             {/* Adicione todas as suas outras rotas aqui */}

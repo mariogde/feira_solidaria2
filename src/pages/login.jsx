@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
 
 function Inputs() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [emailDoador, setEmail2] = useState('');
+  const [passwordDoador, setPassword2] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Email digitado:', email);
     console.log('Senha digitada:', password);
     alert(`Tentativa de login com Email: ${email}`);
-    
+
   };
 
   return (
@@ -34,9 +37,9 @@ function Inputs() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button className="btnLogin" type="submit">Entrar</button>
+        <button className="btnLogin" type="submit" id='btnReceptor'>Entrar</button>
         <p style={{ marginTop: '15px', fontSize: '0.9em' }}>
-          Não tem uma conta Receptor? <Link to="/cadastro" style={{ color: 'rgba(29, 104, 202, 0.692)', fontWeight: 'bold' }}>Cadastre-se aqui</Link>
+          Não tem uma conta Receptor? <Link to="/cadastro-usuario" style={{ color: 'rgba(29, 104, 202, 0.692)', fontWeight: 'bold' }}>Cadastre-se aqui</Link>
         </p>
       </form>
 
@@ -45,29 +48,28 @@ function Inputs() {
         <input
           className="inputLogin"
           type="email"
+          value={emailDoador}
           placeholder="Digite o email do Doador"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail2(e.target.value)}
           required
         />
         <label className="labelLogin">Senha :</label>
         <input
           className="inputLogin"
           type="password"
+          value={passwordDoador}
           placeholder="Digite a sua senha"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => setPassword2(e.target.value)}
           required
         />
         <button className="btnLogin" type="submit">Entrar</button>
         <p style={{ marginTop: '15px', fontSize: '0.9em' }}>
-          Não tem uma conta Doador? <Link to="/cadastro" style={{ color: 'rgba(29, 104, 202, 0.692)', fontWeight: 'bold' }}>Cadastre-se aqui</Link>
+          Não tem uma conta Doador? <Link to="/cadastro-usuario" style={{ color: 'rgba(29, 104, 202, 0.692)', fontWeight: 'bold' }}>Cadastre-se aqui</Link>
         </p>
       </form>
     </div>
   );
 }
-
 
 function LoginPage() {
   return (
