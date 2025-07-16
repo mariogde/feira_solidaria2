@@ -12,8 +12,7 @@ function Inputs() {
     event.preventDefault();
     console.log('Email digitado:', email);
     console.log('Senha digitada:', password);
-    alert(`Tentativa de login com Email: ${email}`);
-
+    alert(`Tentativa de login com Email: ${email} ${emailDoador}`)
   };
 
   return (
@@ -37,7 +36,7 @@ function Inputs() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button className="btnLogin" type="submit" id='btnReceptor'>Entrar</button>
+        <button className="btnLogin" type="submit">Entrar</button>
         <p style={{ marginTop: '15px', fontSize: '0.9em' }}>
           Não tem uma conta Receptor? <Link to="/cadastro-usuario" style={{ color: 'rgba(29, 104, 202, 0.692)', fontWeight: 'bold' }}>Cadastre-se aqui</Link>
         </p>
@@ -48,6 +47,7 @@ function Inputs() {
         <input
           className="inputLogin"
           type="email"
+          id='inputEmail'
           value={emailDoador}
           placeholder="Digite o email do Doador"
           onChange={(e) => setEmail2(e.target.value)}
@@ -57,18 +57,31 @@ function Inputs() {
         <input
           className="inputLogin"
           type="password"
+          id='inputSenha'
           value={passwordDoador}
           placeholder="Digite a sua senha"
           onChange={(e) => setPassword2(e.target.value)}
           required
         />
-        <button className="btnLogin" type="submit">Entrar</button>
+        <button className="btnLogin" type="submit" onClick={loginReceptor}>Entrar</button>
         <p style={{ marginTop: '15px', fontSize: '0.9em' }}>
           Não tem uma conta Doador? <Link to="/cadastro-usuario" style={{ color: 'rgba(29, 104, 202, 0.692)', fontWeight: 'bold' }}>Cadastre-se aqui</Link>
         </p>
       </form>
     </div>
   );
+}
+
+function loginReceptor() {
+    let email = document.getElementById('inputEmail').value;
+    let senha = document.getElementById('inputSenha').value;    
+
+    if(email === '' || senha === '') {
+        alert('Preencha todos os campos!');
+    } else{
+        alert('Usuário logado!');
+        window.location.href = '../perfil'; 
+    }
 }
 
 function LoginPage() {

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 function CadastroPage() {
+ 
   const navigate = useNavigate();
 
   const [nomeItem, setNomeItem] = useState('');
