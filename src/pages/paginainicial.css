@@ -1,0 +1,135 @@
+/* src/pages/HomePage.css */
+
+/* Importa a fonte Inter do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Aplica a fonte Inter a todo o corpo do documento e define uma cor de texto padrão */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6; /* Melhora a legibilidade do texto */
+    background-color: #f8f8f8; /* Cor de fundo neutra para o corpo do site */
+    /* As propriedades de background-image e background-repeat foram removidas */
+}
+
+/* Estilos gerais para o contêiner principal da página */
+.homepage-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    /* font-family já definido no body, pode remover aqui se quiser consistência */
+    /* color: #333; */ /* Já definido no body */
+}
+
+/* Títulos */
+.homepage-container h1 {
+    font-size: 2.8em; /* Aumenta um pouco o tamanho para mais impacto */
+    color: #2c3e50; /* Uma cor mais escura para títulos principais */
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700; /* Negrito para h1 */
+}
+
+.homepage-container h2 {
+    font-size: 2em; /* Aumenta um pouco */
+    color: #34495e; /* Cor para h2 */
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-weight: 600; /* Semi-negrito para h2 */
+}
+
+.homepage-container h2.center-text {
+    text-align: center;
+}
+
+.homepage-container h3 {
+    font-size: 1.6em; /* Aumenta um pouco */
+    color: #007bff; /* Azul para destaque */
+    margin-bottom: 10px;
+    font-weight: 500; /* Médio para h3 */
+}
+
+/* Parágrafos */
+.homepage-container p {
+    font-size: 1.1em;
+    line-height: 1.7; /* Aumenta o espaçamento entre linhas para melhor leitura */
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 400; /* Normal */
+}
+
+/* Destaques de texto */
+.homepage-container strong.highlight-blue {
+    color: #007bff;
+    font-weight: 600; /* Destaque mais forte */
+}
+
+.homepage-container strong.highlight-green {
+    color: #28a745;
+    font-weight: 600; /* Destaque mais forte */
+}
+
+.homepage-container p.call-to-action {
+    font-size: 1.3em; /* Aumenta o tamanho da chamada para ação */
+    font-weight: 700; /* Mais negrito para chamada para ação */
+    color: #28a745;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Separador visual */
+.homepage-separator {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 50px 0;
+}
+
+/* Seções de conteúdo */
+.content-section {
+    margin-bottom: 50px;
+}
+
+.content-list {
+    list-style-type: disc;
+    padding-left: 25px;
+    color: #666;
+}
+
+.content-list li {
+    margin-bottom: 8px;
+}
+
+/* Contêiner da imagem */
+.image-container {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsividade básica (exemplo) */
+@media (max-width: 768px) {
+    .homepage-container {
+        padding: 15px;
+    }
+    .homepage-container h1 {
+        font-size: 2.2em;
+    }
+    .homepage-container h2 {
+        font-size: 1.7em;
+    }
+    .homepage-container h3 {
+        font-size: 1.4em;
+    }
+    .homepage-container p {
+        font-size: 1em;
+    }
+    .homepage-container p.call-to-action {
+        font-size: 1.1em;
+    }
+}
