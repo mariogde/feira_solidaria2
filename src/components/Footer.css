@@ -1,0 +1,96 @@
+/* src/components/Footer.css */
+
+.main-footer {
+    background-color: #2c3e50; /* Um tom escuro da da paleta acolhedora */
+    color: #ecf0f1; /* Texto claro para contraste */
+    padding: 40px 20px;
+    font-family: 'Inter', sans-serif;
+    border-top: 5px solid #007bff; /* Linha azul no topo para destacar */
+    margin-top: 50px; /* Espaçamento do conteúdo cima */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as seções quebrem a linha em telas menores */
+    justify-content: space-around; /* dá espaço as seções igualmente */
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px; /* Espaçamento entre as colunas */
+}
+
+.footer-section {
+    flex: 1; /* seções  ocupam o mesmo espaço */
+    min-width: 250px; /* largura mínima para as colunas */
+    margin-bottom: 20px; /* Espaçamento inferior para mobile */
+}
+
+.footer-section h3 {
+    color: #007bff; /* Títulos das seções fica em azul */
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-section p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #ecf0f1; /* Cor dos links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #28a745; /* Verde de destaque ao passar o mouse */
+    text-decoration: underline;
+}
+
+.social-icons a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Azul ao passar o mouse */
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha divisória*/
+    padding-top: 20px;
+    margin-top: 30px;
+    font-size: 0.85em;
+    color: #bdc3c7; /* Cor mais clara para o copyright */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: 100%; /* Ocupa a largura total em telas pequenas */
+    }
+
+    .social-icons {
+        margin-top: 15px;
+    }
+}
