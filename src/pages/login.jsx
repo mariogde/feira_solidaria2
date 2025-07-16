@@ -22,6 +22,7 @@ function Inputs() {
         <input
           className="inputLogin"
           type="email"
+          id='inputEmail'
           placeholder="Digite o email do Receptor"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -31,12 +32,13 @@ function Inputs() {
         <input
           className="inputLogin"
           type="password"
+          id='inputSenha'
           placeholder="Digite a sua senha"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button className="btnLogin" type="submit">Entrar</button>
+        <button className="btnLogin" type="submit" onClick={loginReceptor}>Entrar</button>
         <p style={{ marginTop: '15px', fontSize: '0.9em' }}>
           Não tem uma conta Receptor? <Link to="/cadastro-usuario" style={{ color: 'rgba(29, 104, 202, 0.692)', fontWeight: 'bold' }}>Cadastre-se aqui</Link>
         </p>
@@ -47,7 +49,7 @@ function Inputs() {
         <input
           className="inputLogin"
           type="email"
-          id='inputEmail'
+          id='inputEmailDoador'
           value={emailDoador}
           placeholder="Digite o email do Doador"
           onChange={(e) => setEmail2(e.target.value)}
@@ -57,13 +59,13 @@ function Inputs() {
         <input
           className="inputLogin"
           type="password"
-          id='inputSenha'
+          id='inputSenhaDoador'
           value={passwordDoador}
           placeholder="Digite a sua senha"
           onChange={(e) => setPassword2(e.target.value)}
           required
         />
-        <button className="btnLogin" type="submit" onClick={loginReceptor}>Entrar</button>
+        <button className="btnLogin" type="submit" onClick={loginDoador}>Entrar</button>
         <p style={{ marginTop: '15px', fontSize: '0.9em' }}>
           Não tem uma conta Doador? <Link to="/cadastro-usuario" style={{ color: 'rgba(29, 104, 202, 0.692)', fontWeight: 'bold' }}>Cadastre-se aqui</Link>
         </p>
@@ -80,7 +82,19 @@ function loginReceptor() {
         alert('Preencha todos os campos!');
     } else{
         alert('Usuário logado!');
-        window.location.href = '../perfil'; 
+        window.location.href = '../perfil-receptor'; // Redireciona para o perfil do receptor
+    }
+}
+
+function loginDoador() {
+    let email = document.getElementById('inputEmailDoador').value;
+    let senha = document.getElementById('inputSenhaDoador').value;    
+
+    if(email === '' || senha === '') {
+        alert('Preencha todos os campos!');
+    } else{
+        alert('Usuário logado!');
+        window.location.href = '../perfil-doador'; // Redireciona para o perfil do receptor
     }
 }
 
