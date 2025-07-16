@@ -8,6 +8,14 @@ const User = ()=> {
     <div className="inputsCadastro"> 
     {/*Aqui vai ter um formulário: */}
         <form className="loginConteiner" >
+            <label className="labelLogin">Nome de Usuário :</label>
+            <input
+                className="inputLogin" 
+                id="inputEmail" 
+                type="text"
+                placeholder="Digite o seu nome de usuário"
+                required
+            />
             <label className="labelLogin">Email :</label>
             <input
                 className="inputLogin" 
