@@ -1,110 +1,725 @@
-/* =============Inicio CSS Login===========*/
+/* src/components/componentes.css */
 
-.inputs{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* ========================================= */
+/* ===== ESTILOS GLOBAIS E RESET BÁSICO ==== */
+/* ========================================= */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif; /* Fonte moderna e limpa */
+    margin: 0;
+    padding: 0;
+    background-color: #eef2f5; /* Fundo suave e claro, harmonioso */
+    color: #333; /* Cor de texto principal escura para boa legibilidade */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased; /* Suaviza as fontes para melhor visualização */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50; /* Azul escuro para títulos, forte e legível */
+    margin-bottom: 15px;
+    font-weight: 700; /* Negrito padrão para títulos */
+}
+
+h1 { font-size: 2.5em; } /* Título principal */
+h2 { font-size: 2em; }    /* Subtítulos */
+h3 { font-size: 1.7em; }  /* Títulos de seção/card */
+
+a {
+    color: #3498db; /* Azul vibrante para links, diferenciado mas harmonioso */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #2980b9; /* Azul um pouco mais escuro no hover */
+    text-decoration: underline; /* Sublinhado no hover para indicar interatividade */
+}
+
+button {
+    background-color: #27ae60; /* Verde solidário forte para botões de ação principal */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px; /* Bordas mais arredondadas para um visual suave */
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600; /* Seminegrito para o texto do botão */
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave para profundidade */
+}
+
+button:hover {
+    background-color: #229954; /* Tom mais escuro no hover */
+    transform: translateY(-2px); /* Pequena elevação no hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Sombra mais pronunciada */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+textarea,
+select {
     width: 100%;
+    padding: 12px 15px; /* Mais padding para maior área de clique/digitação */
+    margin-bottom: 15px;
+    border: 1px solid #cce0e6; /* Borda sutil e clara */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-sizing: border-box; /* Garante que padding não aumente a largura */
+    font-size: 1em;
+    color: #333; /* Cor de texto escura para legibilidade */
+    background-color: #fff; /* Fundo branco para os inputs */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.loginConteiner{
-    margin-top: 5%;
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #3498db; /* Borda azul no foco para indicar campo ativo */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); /* Sombra azul suave no foco */
+    outline: none; /* Remove o contorno padrão do navegador */
+}
+
+textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 100px;
+}
+
+/* ========================================= */
+/* ======== LAYOUT PRINCIPAL (App.jsx) ===== */
+/* ========================================= */
+
+/* Container para o conteúdo principal da página, para centralizar e limitar largura */
+.layout-container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza na tela */
+    padding: 20px;
+}
+
+/* Header (usado no Layout.jsx ou em cada página se você o recriar) */
+.header {
+    background-color: #2c3e50; /* Azul escuro robusto */
+    padding: 15px 25px; /* Ajuste no padding */
+    border-bottom: 1px solid #1a2731;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* Sombra mais forte para o header */
+    color: white;
+}
+
+.header h1 {
+    margin: 0;
+    color: white;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+.header h1 a { /* Link do título no header */
+    color: white;
+    text-decoration: none;
+}
+
+.header nav a {
+    margin-left: 25px;
+    color: #ecf0f1; /* Branco acinzentado suave para links de navegação */
+    font-weight: 600; /* Seminegrito */
+    font-size: 1.05em;
+}
+
+.header nav a:hover {
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* Footer (usado no Layout.jsx ou em cada página) */
+.footer {
+    background-color: #34495e; /* Azul médio escuro para o rodapé */
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px; /* Espaço maior acima do rodapé */
+    font-size: 0.9em;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15); /* Sombra para o rodapé */
+}
+
+/* ========================================= */
+/* ========= ESTILOS DA PÁGINA DE LOGIN ==== */
+/* ========================================= */
+.inputs { /* Container que centraliza o formulário de login */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 732px;
-    height: 450px;
-    background-color: rgba(33, 81, 145, 0.247);
-
+    min-height: calc(100vh - 200px); /* Ocupa quase toda a altura da tela menos header/footer */
+    padding: 20px;
 }
 
-.inputLogin{
-    color: black;
-    font-size: 16pt;
-    padding-left: 20px;
-    height: 87px;
-    width: 348px;
-    margin: 0px 0 20px 0;
-    background-color: white;
-    border: none;
-    border-radius: 40px;
+.loginConteiner {
+    margin-top: 2%; /* Reduzi a margem superior para melhor centralização */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza itens horizontalmente */
+    justify-content: center; /* Centraliza itens verticalmente */
+    width: 100%;
+    max-width: 450px; /* Largura máxima para o formulário */
+    padding: 40px; /* Aumentei o padding interno */
+    background-color: #fff; /* Fundo branco para o formulário de login */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Sombra mais pronunciada para o formulário */
 }
 
-.labelLogin{
+.inputLogin {
+    color: #333; /* Cor do texto no input escurecida */
+    font-size: 1.1em; /* Tamanho da fonte ajustado */
+    padding: 15px 20px; /* Ajustei padding */
+    height: auto; /* Deixa a altura flexível com o padding */
+    width: calc(100% - 40px); /* Ajusta a largura para o padding */
+    margin-bottom: 20px;
+    background-color: #f8fbfd; /* Fundo levemente azulado para o input */
+    border: 1px solid #d4e3f0; /* Borda suave */
+    border-radius: 30px; /* Mais arredondado */
+}
+
+.labelLogin {
     font-weight: bold;
-    margin-bottom: 10px;
-    width: 348px;
-    font-size: 20px;
-    color: black;
+    margin-bottom: 8px; /* Espaço entre label e input */
+    width: calc(100% - 40px); /* Alinha com o input */
+    text-align: left; /* Alinha o texto da label à esquerda */
+    font-size: 1.05em;
+    color: #555; /* Cor da label mais escura */
 }
 
-.btnLogin{
-    border: none;
-    width: 160px;
-    height: 63px;
-    border-radius: 20px;
-    font-size: 18pt;
-    background-color: rgba(29, 104, 202, 0.692);
+.btnLogin {
+    width: 180px; /* Largura fixa para o botão */
+    height: 55px; /* Altura ajustada */
+    border-radius: 30px; /* Bem arredondado */
+    font-size: 1.2em;
+    background-color: #3498db; /* Azul para o botão de login */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-/* =============Fim CSS Login===========*/
+.btnLogin:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
 
-/* =============Inicio CSS Perfil doador===========*/
+.loginConteiner p {
+    color: #666; /* Cor do texto "Não tem uma conta?" */
+}
+
+.loginConteiner p a {
+    color: #3498db; /* Cor do link "Cadastre-se aqui" */
+    font-weight: bold;
+}
+
+/* ========================================= */
+/* ========= ESTILOS DA PÁGINA PERFIL ====== */
+/* ========================================= */
 .Perfil {
-  background-color: #f6f6dc; 
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 100%;
-  margin: 0 auto;
+    background-color: #fff; /* Fundo branco para o container principal do perfil */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 30px auto;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Sombra mais proeminente */
 }
 .Perfil h1 {
-  color:black;
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    text-align: center;
 }
 
-
 .Perfil_Dados {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px; /* Aumentei o gap entre colunas */
+    margin-bottom: 40px; /* Mais espaço abaixo dos dados */
+    background-color: #f9fbfd; /* Fundo suave para a seção de dados */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Sombra interna para destaque */
 }
 
 .Perfil_itens {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha labels e inputs à esquerda */
 }
 
-
 .Perfil_itens label {
-  color:black;
-  font-size: 16px;
-  margin-bottom: 6px;
+    color: #444; /* Cor da label escura */
+    font-size: 1em;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
 .Perfil_itens input {
-  background-color: #e1e1e1;
-  border: none;
-  border-radius: 20px;
-  height: 32px;
-  padding: 0 12px;
-  font-size: 14px;
-  color: #333;
-  pointer-events: none; 
+    background-color: #e9eff3; /* Fundo mais claro para inputs de leitura */
+    border: 1px solid #d4e3f0;
+    border-radius: 8px; /* Mais arredondado */
+    height: 40px; /* Maior altura */
+    padding: 0 15px;
+    font-size: 1em;
+    color: #333; /* Texto do input bem legível */
+    pointer-events: none;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05); /* Sombra interna */
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
-  .Perfil_Dados {
-    grid-template-columns: 1fr;
-  }
+.perfil-doacoes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px; /* Espaçamento ajustado */
+    margin-top: 20px;
 }
 
-/* =============Fim CSS Perfil doador===========*/
+.perfil-doacoes-list .doacao-card {
+    background-color: #fff;
+    border: 1px solid #e0e9f0; /* Borda mais clara */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+}
 
-/* =============Inicio CSS Cadastro Usuário===========*/
+.perfil-doacoes-list .doacao-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
 
-/* =============Fim CSS Perfil doador===========*/
+.perfil-doacoes-list .doacao-card img {
+    max-width: 90%; /* Ajustado */
+    height: 160px; /* Altura ligeiramente maior */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.perfil-doacoes-list .doacao-card h3 {
+    margin-top: 0;
+    color: #34495e;
+    font-size: 1.3em;
+    margin-bottom: 8px;
+}
+
+.perfil-doacoes-list .doacao-card p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.perfil-doacoes-list .doacao-card button {
+    margin: 5px;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    background-color: #3498db; /* Azul para botões de ação nos cards */
+    border-radius: 5px;
+}
+.perfil-doacoes-list .doacao-card button:hover {
+    background-color: #2980b9;
+}
+
+.btn-cadastrar-doacao {
+    background-color: #27ae60;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 10px;
+    margin-top: 40px; /* Mais espaço */
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o botão */
+}
+.btn-cadastrar-doacao:hover {
+    background-color: #229954;
+}
+
+/* ========================================= */
+/* ======= ESTILOS DA PÁGINA INICIAL ======= */
+/* ========================================= */
+.home-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.filters-section {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 40px; /* Mais espaço */
+    text-align: center;
+}
+
+.filters-section h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-filter,
+.select-filter {
+    flex-grow: 1;
+    min-width: 220px; /* Aumentei a largura mínima */
+    padding: 12px 15px;
+    border: 1px solid #d4e3f0;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #f8fbfd;
+    color: #333;
+}
+
+.doacoes-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); /* Ajuste para cards um pouco maiores */
+    gap: 30px; /* Mais espaço entre cards */
+    margin-top: 25px;
+}
+
+.doacao-card {
+    background-color: #fff;
+    border: 1px solid #e0e9f0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+}
+
+.doacao-card:hover {
+    transform: translateY(-8px); /* Efeito mais pronunciado */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.doacao-card img {
+    max-width: 100%;
+    height: 200px; /* Altura maior para as imagens da home */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.doacao-card h3 {
+    margin-top: 0;
+    color: #34495e;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.doacao-card p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.doacao-card button {
+    background-color: #27ae60;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+/* ========================================= */
+/* ==== ESTILOS DA PÁGINA CADASTRO DOAÇÃO == */
+/* ========================================= */
+.cadastro-doacao-container {
+    padding: 35px;
+    max-width: 700px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Sombra mais forte */
+}
+
+.cadastro-doacao-container h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 2.2em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444; /* Cor da label escurecida */
+    font-size: 1.05em;
+}
+
+/* Inputs, textareas, selects já são estilizados globalmente */
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Mais espaço entre os botões */
+    margin-top: 35px;
+}
+
+.form-actions button {
+    padding: 12px 28px; /* Mais padding para os botões */
+    font-size: 1.1em;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.form-actions .btn-publicar {
+    background-color: #27ae60;
+}
+.form-actions .btn-publicar:hover {
+    background-color: #229954;
+}
+
+.form-actions .btn-cancelar {
+    background-color: #e74c3c;
+}
+.form-actions .btn-cancelar:hover {
+    background-color: #c0392b;
+}
+
+/* ========================================= */
+/* ==== ESTILOS DA PÁGINA DETALHES ITEM ==== */
+/* ========================================= */
+.detalhes-item-container {
+    padding: 40px;
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Sombra forte */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-voltar {
+    background-color: #666;
+    padding: 10px 25px;
+    border-radius: 8px;
+    margin-bottom: 30px; /* Mais espaço */
+    align-self: flex-start; /* Alinha o botão de voltar à esquerda */
+}
+.btn-voltar:hover {
+    background-color: #555;
+}
+
+.detalhes-item-container h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.detalhes-item-container img {
+    max-width: 90%; /* Aumentei a largura da imagem */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.detalhes-item-info {
+    width: 90%; /* Ajusta a largura para o bloco de informações */
+    text-align: left;
+    margin-bottom: 25px;
+    line-height: 1.7; /* Mais espaço entre linhas */
+}
+
+.detalhes-item-info p {
+    font-size: 1.1em;
+    color: #444; /* Cor do texto de descrição */
+    margin-bottom: 12px;
+}
+
+.detalhes-item-info strong {
+    color: #333; /* Cor dos textos em negrito */
+}
+
+.contato-section {
+    background-color: #f0f5fa; /* Fundo suave para a seção de contato */
+    border: 1px solid #d4e3f0;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 25px;
+    width: 90%;
+    box-shadow: inset 0 1px 4px rgba(0,0,0,0.08); /* Sombra interna para destaque */
+}
+
+.contato-section h2 {
+    color: #3498db; /* Azul para o título da seção de contato */
+    margin-bottom: 18px;
+    font-size: 1.8em;
+}
+
+.contato-section button {
+    background-color: #3498db;
+    padding: 15px 30px;
+    font-size: 1.15em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.contato-section button:hover {
+    background-color: #2980b9;
+}
+
+.contato-section p {
+    font-size: 0.95em;
+    color: #777; /* Cor do texto de aviso do contato */
+    margin-top: 15px;
+}
+
+/* ========================================= */
+/* ============= RESPONSIVIDADE ============ */
+/* ========================================= */
+
+@media (max-width: 992px) {
+    .layout-container {
+        padding: 15px;
+    }
+    .home-container,
+    .cadastro-doacao-container,
+    .detalhes-item-container,
+    .Perfil {
+        padding: 25px;
+        margin: 20px auto;
+    }
+    .doacoes-list-grid,
+    .perfil-doacoes-list {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
+    }
+    .loginConteiner {
+        max-width: 400px;
+        padding: 30px;
+    }
+    .inputLogin, .labelLogin {
+        width: calc(100% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.7em; }
+    h3 { font-size: 1.4em; }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 10px;
+    }
+    .header nav {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .header nav a {
+        margin: 5px 10px;
+        font-size: 1em;
+    }
+
+    .loginConteiner {
+        max-width: 95%; /* Ocupa quase toda a largura em mobile */
+        padding: 25px;
+    }
+    .inputLogin, .labelLogin, .btnLogin {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .btnLogin {
+        max-width: 180px; /* Mantém a largura do botão para não esticar demais */
+    }
+
+    .Perfil_Dados {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 15px;
+        padding: 20px;
+    }
+    .doacao-card img, .perfil-doacoes-list .doacao-card img {
+        height: 180px; /* Ajuste altura da imagem para mobile */
+    }
+    .btn-cadastrar-doacao {
+        width: 90%; /* Botão ocupa mais largura */
+    }
+
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .input-filter, .select-filter {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .cadastro-doacao-container, .detalhes-item-container {
+        padding: 20px;
+        margin: 15px auto;
+        max-width: 95%;
+    }
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .form-actions button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .btn-voltar {
+        width: 100%;
+        text-align: center;
+        align-self: center; /* Centraliza o botão */
+    }
+    .detalhes-item-container img {
+        max-width: 100%;
+    }
+    .detalhes-item-info, .contato-section {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.2em; }
+    
+    .header h1 { font-size: 1.5em; }
+    .header nav a { font-size: 0.9em; margin: 5px 8px; }
+
+    .loginConteiner, .Perfil, .home-container, .cadastro-doacao-container, .detalhes-item-container {
+        padding: 15px;
+        margin: 10px auto;
+    }
+    .inputLogin, .Perfil_itens input, .input-filter, .select-filter,
+    .cadastro-doacao-container input, .cadastro-doacao-container select, .cadastro-doacao-container textarea {
+        font-size: 0.95em;
+        padding: 10px 12px;
+    }
+    button {
+        font-size: 0.95em;
+        padding: 10px 18px;
+    }
+}

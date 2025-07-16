@@ -2,7 +2,7 @@
 
 import React from 'react';
 // Importa o arquivo CSS para estilização
-import './paginainicial.css'; 
+import './paginainicial'; 
 
 const HomePage = () => {
   return (
