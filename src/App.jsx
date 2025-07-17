@@ -17,7 +17,6 @@ import LoginPage from './pages/login';                 // Ex: a página de login
 import CadastroPage from './pages/cadDoacao';    // Ex: a página de cadastro
 import User from './components/cadUsuario';    // Ex: a página de cadastro
 import PerfilPage from './pages/perfilDoador';       // Ex: a página de perfil do doador
-import PerfilReceptor from './pages/perfilReceptor.jsx';       // Ex: a página de perfil do receptor
 import ItemDetailsPage from './pages/detalhesDoItem'; // Ex: detalhes de um item
 
 // 5. Defina o componente principal do seu aplicativo

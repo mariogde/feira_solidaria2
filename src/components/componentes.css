@@ -332,6 +332,30 @@ textarea {
     background-color: #2980b9;
 }
 
+.filtrosContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filtros{
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.selectFiltro{
+    width: 95%;
+}
+
+.cadastroButton{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .btn-cadastrar-doacao {
     background-color: #27ae60;
     padding: 15px 30px;
