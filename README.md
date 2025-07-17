@@ -78,7 +78,7 @@ Nesta fase inicial do projeto, focamos na implementação da estrutura fundament
 
 * Integrantes: Perfil do LinkedIn
     * João Victor: https://www.linkedin.com/in/joao-victor-sousa-320093207?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
-    * Lizangelo Vasconcelos: bit.ly/3U4RYr4
+    * Lizangelo Vasconcelos:https://www.linkedin.com/in/lizangelo-vasconcelos-aaa60b245?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
     * Mario Gomes: www.linkedin.com/in/mário-gomes-de-sousa-filho-907839300/
     * Nayla Moraes: www.linkedin.com/in/nayla-moraes
     * Raimunda Nonata: www.linkedin.com/in/nonata-lima-1263a224a
