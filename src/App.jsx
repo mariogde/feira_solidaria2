@@ -41,7 +41,6 @@ function App() {
             <Route path="/cadastro" element={<CadastroPage />} /> 
             <Route path="/cadastro-usuario" element={<User />} /> 
             <Route path="/perfil" element={<PerfilPage />} />
-            <Route path="/perfil-receptor" element={<PerfilReceptor />} />
             <Route path="/item/:id" element={<ItemDetailsPage />} />
             {/* Adicione todas as suas outras rotas aqui */}
           </Routes>

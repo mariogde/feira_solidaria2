@@ -36,13 +36,30 @@ function Inputs() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button className="btnLogin" type="submit">Entrar</button>
+        <button className="btnLogin" type="submit" onClick={Login}>Entrar</button>
         <p style={{ marginTop: '15px', fontSize: '0.9em' }}>
           Não tem uma conta ? <Link to="/cadastro-usuario" style={{ color: 'rgba(29, 104, 202, 0.692)', fontWeight: 'bold' }}>Cadastre-se aqui</Link>
         </p>
       </form>
     </div>
   );
+}
+
+function Login() {
+  let btnEntrar = document.querySelector('.btnLogin');
+
+  btnEntrar.addEventListener('click', (e) => {
+    e.preventDefault();
+    let inputEmail = document.querySelector('#inputEmail');
+    let inputSenha = document.querySelector('#inputSenha');
+
+    if (inputEmail.value === '' || inputSenha.value === '') {
+      alert('Preencha todos os campos!');
+    } else {
+      alert(`Login realizado com sucesso! Email: ${inputEmail.value}`);
+      window.location.href = '/perfil'; // Redireciona para a página de perfil 
+    }
+  });
 }
 
 function LoginPage() {
