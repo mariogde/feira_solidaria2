@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 
 import React from 'react';
-import './Footer'; 
+import './Footer.css'; 
 
 const Footer = () => {
   return (
@@ -35,7 +35,7 @@ const Footer = () => {
           <p>Email: contato@feirasolidaria.org</p>
           <p>Telefone: (XX) XXXX-XXXX</p>
           <div className="social-icons">
-            {/* Ícones de redes sociais (pra colocar SVGs ou Font Awesome se tiver) */}
+            {/* Ícones de redes sociais (pra colocar SVGs ou Font awesome se tiver) */}
             <a href="#" aria-label="Facebook da Feira Solidária">Facebook</a> | 
             <a href="#" aria-label="Instagram da Feira Solidária">Instagram</a> | 
             <a href="#" aria-label="Twitter da Feira Solidária">Twitter</a>
