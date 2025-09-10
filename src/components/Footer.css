@@ -5,7 +5,7 @@
     color: #ecf0f1; /* claro para contraste */
     padding: 15px 20px; /* mantém o padding vertical, pode ser ajustado se necessário */
     font-family: 'Inter', sans-serif;
-    border-top: 5px solid #007bff; /* linha azul de destaque no topo */
+    border-top: 5px solid #76a1df; /* linha azul de destaque no topo */
     margin-top: 80px; /* espaçamento do conteúdo acima para afastar o footer */
     font-size: 0.9em; /* reduz o tamanho da fonte geral do footer para mais compactação */
 }
@@ -29,7 +29,7 @@
 }
 
 .footer-section h3 {
-    color: #007bff; /* títulos seções em azul */
+    color: #76a1df; /* títulos seções em azul */
     font-size: 1.2em; /* reduz o tamanho do título da seção */
     margin-bottom: 10px; /* reduz o espaçamento inferior */
     font-weight: 600;
