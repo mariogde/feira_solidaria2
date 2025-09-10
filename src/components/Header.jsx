@@ -7,6 +7,7 @@ function Header() {
   return (
     <header className="main-header"> {/* Aqui usamos classes CSS */}
       <div className="logo-container">
+        <img src="/logo1.png" className='logo-image'/>
         {/* O logo ou o nome da Feira será um link para a página inicial, ainda vamos definir isso */}
         <Link to="/" className="logo-link">
           Feira Solidária
