@@ -13,7 +13,7 @@ const ListarDados = async () => {
 /*Buscar usuario especidico GET /api/usuarios/:id*/
 const BuscarDadosUsuario = async (id_usuario) => {
     try {
-        const response = await api.get(`/api/usuarios/${id_usuario}`);
+        const response = await api.get(`/usuarios/${id_usuario}`);
         return response.data;
     } catch (error) {
         console.error("Erro ao buscar dados do usuario:", error);
@@ -25,7 +25,7 @@ const BuscarDadosUsuario = async (id_usuario) => {
 
 const CriarDadosUsuario = async (payload) => {
     try {
-        const response = await api.post(`/api/usuarios/`, payload);
+        const response = await api.post(`/usuarios/`, payload);
         return response.data;
     } catch (error) {
         console.error("Erro criar usuario:", error);
@@ -37,7 +37,7 @@ const CriarDadosUsuario = async (payload) => {
 
 const AtualizarDadosUsuario = async (id_usuario, payload) => {
     try {
-        const response = await api.put(`/api/usuarios/${id_usuario}, ${payload}`);
+        const response = await api.put(`/usuarios/${id_usuario}, ${payload}`);
         return response.data;
     } catch (error) {
         console.error("Erro ao atualizar dados:", error);
@@ -49,7 +49,7 @@ const AtualizarDadosUsuario = async (id_usuario, payload) => {
 
 const DeletarDadosUsuario = async (id_usuario) => {
     try {
-        const response = await api.delete(`/api/usuarios/${id_usuario}`);
+        const response = await api.delete(`/usuarios/${id_usuario}`);
         return response.data;
     } catch (error) {
         console.error("Erro ao atualizar dados:", error);
