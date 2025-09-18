@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 //import Header from '../components/Header';
 import { login } from '../services/authService';
-import { isAutenticado } from '../utils/authLogin';
+import { isAutenticado } from '../util/authLogin';
 
 
 function Inputs() {
