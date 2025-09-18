@@ -1,20 +1,41 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Header from '../components/Header';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+//import Header from '../components/Header';
+import { login } from '../services/authService';
+import { isAutenticado } from '../utils/authLogin';
+
 
 function Inputs() {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [senhaHash, setSenhaHash] = useState('');
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (isAutenticado()) {
+      navigate();
+    }
+  }, []);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Email digitado:', email);
-    console.log('Senha digitada:', password);
-    alert(`Tentativa de login com Email: ${email}`);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Enviado para o backend: ", {email, senhaHash})
+    try {
+      // Chama a função login que retorna o token do backend
+      const response = await login(email, senhaHash); //chama api
+
+      // Salva o token no localStorage
+      localStorage.setItem('token', response.data.token); //Salva tokein
+
+      alert('Login realizado com sucesso!');
+      navigate('/perfil'); // redireciona para a página de perfil
+    } catch (error) {
+      console.error('Erro ao logar:', error);
+      alert('Email ou senha inválidos!');
+    };
+
   };
 
   return (
-    <div className="inputs"> 
+    <div className="inputs">
       <form className="loginConteiner" onSubmit={handleSubmit}>
         <label className="labelLogin">Email:</label>
         <input
@@ -32,20 +53,20 @@ function Inputs() {
           type="password"
           id='inputSenha'
           placeholder="Digite a sua senha"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={senhaHash}
+          onChange={(e) => setSenhaHash(e.target.value)}
           required
         />
-        <button className="btnLogin" id='btnLogin' type="submit" onClick={Login}>Entrar</button>
+        <button className="btnLogin" id='btnLogin' type="submit" >Entrar</button>
         <p style={{ marginTop: '15px', fontSize: '0.9em' }}>
-          Não tem uma conta ? <Link to="/cadastro-usuario" style={{ color: 'rgba(29, 104, 202, 0.692)', fontWeight: 'bold' }}>Cadastre-se aqui</Link>
+          Não tem uma conta ? <Link to="/cadastro-usuario " style={{ color: 'rgba(29, 104, 202, 0.692)', fontWeight: 'bold' }}>Cadastre-se aqui</Link>
         </p>
       </form>
     </div>
   );
 }
 
-function Login() {
+/*function Login() {
   let btnEntrar = document.getElementById('btnLogin');
 
   btnEntrar.addEventListener('click', () => {
@@ -59,7 +80,7 @@ function Login() {
       window.location.href = '/perfil'; // Redireciona para a página de perfil 
     }
   });
-}
+}*/
 
 function LoginPage() {
   return (
