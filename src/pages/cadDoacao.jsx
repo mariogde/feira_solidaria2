@@ -28,7 +28,7 @@ function CadastroPage() {
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="nomeItem">Nome do Item:</label>
-            <input type="text" id="nomeItem" value={titulo} onChange={(e) => setNomeItem(e.target.value)} required />
+            <input type="text" id="nomeItem" value={nomeItem} onChange={(e) => setNomeItem(e.target.value)} required />
           </div>
           <div className="form-group">
             <label htmlFor="descricao">Descrição:</label>
