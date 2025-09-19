@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import itemService from '../services/itemService';
+import itemService from '../services/itensServices';
 
 function DetalhesdoItem() {
   const [item, setItem] = useState([])

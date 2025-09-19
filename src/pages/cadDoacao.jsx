@@ -28,7 +28,7 @@ function CadastroPage() {
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="nomeItem">Nome do Item:</label>
-            <input type="text" id="nomeItem" value={nomeItem} onChange={(e) => setNomeItem(e.target.value)} required />
+            <input type="text" id="nomeItem" value={titulo} onChange={(e) => setNomeItem(e.target.value)} required />
           </div>
           <div className="form-group">
             <label htmlFor="descricao">Descrição:</label>
@@ -47,7 +47,7 @@ function CadastroPage() {
           </div>
           <div className="form-group">
             <label htmlFor="localizacao">Localização (Bairro/Cidade):</label>
-            <input type="text" id="localizacao" value={localizacao} onChange={(e) => setLocalizacao(e.target.value)} required />
+            <input type="text" id="localizacao" value={endereco} onChange={(e) => setLocalizacao(e.target.value)} required />
           </div>
           <div className="form-group">
             <label htmlFor="telefone">Telefone para Contato:</label>
