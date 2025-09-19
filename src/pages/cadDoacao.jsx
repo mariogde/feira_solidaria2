@@ -47,7 +47,7 @@ function CadastroPage() {
           </div>
           <div className="form-group">
             <label htmlFor="localizacao">Localização (Bairro/Cidade):</label>
-            <input type="text" id="localizacao" value={endereco} onChange={(e) => setLocalizacao(e.target.value)} required />
+            <input type="text" id="localizacao" value={localizacao} onChange={(e) => setLocalizacao(e.target.value)} required />
           </div>
           <div className="form-group">
             <label htmlFor="telefone">Telefone para Contato:</label>
