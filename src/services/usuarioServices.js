@@ -37,7 +37,7 @@ const CriarDadosUsuario = async (payload) => {
 
 const AtualizarDadosUsuario = async (id_usuario, payload) => {
     try {
-        const response = await api.put(`/usuarios/${id_usuario}, ${payload}`);
+        const response = await api.put(`/usuarios/${id_usuario}`, payload);
         return response.data;
     } catch (error) {
         console.error("Erro ao atualizar dados:", error);
