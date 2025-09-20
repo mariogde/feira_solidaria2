@@ -11,13 +11,13 @@ const HomePage = () => {
       
       {/* Título Principal da Página */}
       <h1 className="main-title">
-        Feira Solidária: Conectando Corações, Transformando Vidas
+        Conectando Corações, Transformando Vidas
       </h1>
 
       {/* Seção de Introdução ao Propósito */}
       <section className="content-section">
         <h2 className="section-title">
-          Um Propósito Simples, um Impacto Gigante
+          • Um Propósito Simples, um Impacto Gigante
         </h2>
         <p>
           A <strong className="highlight-blue">Feira Solidária</strong> nasce de um ideal poderoso: conectar quem quer ajudar a quem mais precisa, de forma <strong className="highlight-green">direta, digna e sem burocracia</strong>. Acreditamos que a solidariedade pode e deve ser acessível a todos, e a tecnologia é a nossa ponte para tornar isso realidade.
@@ -33,7 +33,7 @@ const HomePage = () => {
       {/* Seção de Chamada para Ação */}
       <section className="content-section">
         <h2 className="section-title center-text">
-          Sua Solidariedade, ao Alcance de um Clique
+          • Sua Solidariedade, ao Alcance de um Clique
         </h2>
 
         {/* Artigo/Subseção para Doadores */}
@@ -76,7 +76,7 @@ const HomePage = () => {
       {/* Seção de Tecnologia e Chamada Final */}
       <section className="content-section">
         <h2 className="section-title">
-          Tecnologia a Serviço da Humanidade
+          • Tecnologia a Serviço da Humanidade
         </h2>
         <p>
           Por meio de um sistema intuitivo e eficiente, a Feira Solidária visa eliminar as barreiras sociais e burocráticas que muitas vezes dificultam o acesso à ajuda. Incentivamos a solidariedade prática, transformando a boa vontade em ações concretas e o acesso à necessidade em uma jornada mais simples.

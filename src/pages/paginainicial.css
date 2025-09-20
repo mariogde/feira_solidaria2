@@ -7,8 +7,9 @@
 body {
     font-family: 'Inter', sans-serif;
     color: #333;
+    padding: 20px;
     line-height: 1.6; /* Melhora a legibilidade do texto */
-    background-color: #f8f8f8; /* Cor de fundo neutra para o corpo do site */
+    background-color: #ffe96c; /* Cor de fundo neutra para o corpo do site */
     /* As propriedades de background-image e background-repeat foram removidas */
 }
 
@@ -87,6 +88,7 @@ body {
 /* Seções de conteúdo */
 .content-section {
     margin-bottom: 50px;
+    padding: 20px;
 }
 
 .content-list {
@@ -103,6 +105,7 @@ body {
 .image-container {
     text-align: center;
     margin-bottom: 50px;
+    size: 20px;
 }
 
 .image-container img {
@@ -115,19 +118,23 @@ body {
 /* Responsividade básica (exemplo) */
 @media (max-width: 768px) {
     .homepage-container {
-        padding: 15px;
+        padding: 25px;
     }
     .homepage-container h1 {
         font-size: 2.2em;
+        padding: 25px;
     }
     .homepage-container h2 {
         font-size: 1.7em;
+        padding: 25px;
     }
     .homepage-container h3 {
         font-size: 1.4em;
+        padding: 25px;
     }
     .homepage-container p {
         font-size: 1em;
+        padding: 25px;
     }
     .homepage-container p.call-to-action {
         font-size: 1.1em;

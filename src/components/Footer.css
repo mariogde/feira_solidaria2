@@ -44,6 +44,7 @@
 .footer-links ul {
     list-style: none;
     padding: 0;
+    margin-right: 10px;
 }
 
 .footer-links li {
@@ -57,7 +58,7 @@
 }
 
 .footer-links a:hover {
-    color: #28a745; /* Verde de destaque ao passar o mouse */
+    color: #007bff; /* Verde de destaque ao passar o mouse */
     text-decoration: underline;
 }
 
