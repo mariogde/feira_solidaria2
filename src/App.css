@@ -1,42 +1,73 @@
+/* Centraliza e aplica padding no container principal */
 #root {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #0d6efd !important; /* azul bootstrap */
+}
+.navbar-brand,
+.nav-link {
+  color: #fff !important;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Container principal */
+main, .card {
+  background: #fff;
+  border-radius: 12px;
   padding: 2rem;
+  margin: 1rem auto;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Botões */
+.btn-primary {
+  background-color: #0d6efd;
+  border: none;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  transform: scale(1.05);
+}
+
+/* Rodapé */
+footer {
+  background-color: #0d6efd;
+  color: white;
   text-align: center;
+  padding: 1rem 0;
+  margin-top: auto;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Imagem banner */
+.banner {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Títulos */
+h1, h2, h3 {
+  font-weight: 600;
+  color: #0d6efd;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Listas */
+ul {
+  list-style: none;
+  padding-left: 0;
 }
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+ul li::before {
+  content: "✔ ";
+  color: #198754; /* verde bootstrap */
 }
