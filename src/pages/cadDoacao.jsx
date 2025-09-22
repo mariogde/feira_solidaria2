@@ -1,6 +1,8 @@
 // cadastro de doação
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import itensService from '../services/itensServices';
+
 
 
 function CadastroPage() {
@@ -13,6 +15,22 @@ function CadastroPage() {
   const [localizacao, setLocalizacao] = useState('');
   const [telefone, setTelefone] = useState('');
   const [imagem, setImagem] = useState(null);
+
+  const [dados, setDados] = useState([]);
+
+useEffect(() => {
+    const carregarDados = async () => {
+      try {
+        const response = await itensService.buscarItens();
+        setDados(response);
+      } catch (error) {
+        console.error("Erro ao carregar dados:", error);
+      }
+    };
+
+    carregarDados();
+  }, []);
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
