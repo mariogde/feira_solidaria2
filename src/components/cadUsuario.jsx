@@ -58,7 +58,7 @@ const User = () => {
                 email,
                 telefone,
                 endereco,
-                senhaHash
+                senha: senhaHash
             });
 
             alert(data.message); // Mensagem do backend (ex: "Usuário cadastrado com sucesso!")

@@ -7,24 +7,22 @@ import { isAutenticado } from '../util/authLogin';
 
 function Inputs() {
   const [email, setEmail] = useState('');
-  const [senhaHash, setSenhaHash] = useState('');
+  const [senha, setSenha] = useState('');
   const navigate = useNavigate();
   useEffect(() => {
     if (isAutenticado()) {
-      navigate();
+      navigate('/perfil');
     }
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Enviado para o backend: ", {email, senhaHash})
+    console.log("Enviado para o backend: ", {email, senha})
     try {
       // Chama a função login que retorna o token do backend
-      const response = await login(email, senhaHash); //chama api
-
+      const response = await login(email, senha); //chama api
       // Salva o token no localStorage
       localStorage.setItem('token', response.data.token); //Salva tokein
-
       alert('Login realizado com sucesso!');
       navigate('/perfil'); // redireciona para a página de perfil
     } catch (error) {
@@ -53,8 +51,8 @@ function Inputs() {
           type="password"
           id='inputSenha'
           placeholder="Digite a sua senha"
-          value={senhaHash}
-          onChange={(e) => setSenhaHash(e.target.value)}
+          value={senha}
+          onChange={(e) => setSenha(e.target.value)}
           required
         />
         <button className="btnLogin" id='btnLogin' type="submit" >Entrar</button>
